@@ -17,11 +17,11 @@ def is_element_present(xpath):
         return True
     except :
         return False
-        
+
 #8.	Write a method to get the name of the sender and subject of email of your inbox.
 def get_name_subject(n):
     name = driver.find_element_by_xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[8]/div/div[1]/div[3]/div/table/tbody/tr["+str(n)+"]/td[4]/div[2]/span/span").text   
-    emailSubject = driver.find_element_by_xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[8]/div/div[1]/div[3]/div/table/tbody/tr["+str(n)+"]/td[4]/div[2]/span/span").text
+    emailSubject = driver.find_element_by_xpath("/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[8]/div/div[1]/div[3]/div/table/tbody/tr["+str(n)+"]/td[5]/div/div/div/span/span").text
     return name, emailSubject
 
 # 1.Open a browser of your choice say Mozilla Firefox using Gecko Driver
@@ -55,3 +55,4 @@ print("Total Emails :", i-1)
 #7.	Get the name of the sender and subject of Nth Email of your inbox.
 NthEmail = get_name_subject(5)
 print ("Name : "+ NthEmail[0]+"  Subject: "+NthEmail[1])
+
