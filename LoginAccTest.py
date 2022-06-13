@@ -45,6 +45,7 @@ if titleTab == "Primary":
     print("Login correct and selected Tab is Primary!")
 else:
     print("Not in Primery tab")
+    driver.find_element(By.XPATH, "/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div/div[5]/table/tbody/tr[1]/td[1]/div/div[5]").click()
 
 # 6.Get the count of the total number of emails in the Primary tab.
 i=1
