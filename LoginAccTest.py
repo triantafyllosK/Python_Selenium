@@ -3,9 +3,9 @@
 #Download selenium driver from https://github.com/mozilla/geckodriver/releases
 #And place in " C:\Windows\Temp" and also to project file
 
-from time import sleep
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+from time import sleep                       # add delay in the execution of a program
+from selenium import webdriver               #browser automation library
+from selenium.webdriver.common.by import By  # attributes which can be used to locate elements
 
 username = "kotronis.dataverse@gmail.com"
 password = "D@t@verse2022"
@@ -38,8 +38,13 @@ driver.find_element(By.NAME, "password").send_keys(password)
 sleep(2)
 driver.find_element(By.XPATH, "/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").click()
 sleep(2)
-print("Loggin correct")
+
+#4.	Verify that by default “Primary” section is selected.
+titleTab = driver.title
+print(titleTab)
+assert "Inbox" in titleTab
 sleep(3)
+print("Login correct and selected Tab is Inbox!")
 
 # 6.Get the count of the total number of emails in the Primary tab.
 i=1
@@ -51,6 +56,4 @@ print("Total Emails :", i-1)
 #7.	Get the name of the sender and subject of Nth Email of your inbox.
 NthEmail = get_name_subject(5)
 print ("Name : "+ NthEmail[0]+"  Subject: "+NthEmail[1])
-
-
 
